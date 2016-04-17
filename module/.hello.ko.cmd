@@ -1,0 +1,1 @@
+cmd_/home/seop/work/linux_kernel/module/hello.ko := ld -r -m elf_i386 -T /var/linux-2.6.38.8/scripts/module-common.lds --build-id  -o /home/seop/work/linux_kernel/module/hello.ko /home/seop/work/linux_kernel/module/hello.o /home/seop/work/linux_kernel/module/hello.mod.o
