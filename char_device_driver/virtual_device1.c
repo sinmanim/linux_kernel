@@ -47,7 +47,9 @@ int __init virtual_device_init( void )
 		printk( KERN_ALERT "driver init failed\n" );
 	else
 		printk( KERN_ALERT "driver init successful\n" );
-	
+
+	buffer = (char *) kmalloc( 1024, GFP_KERNEL );	
+
 	if( buffer != NULL )
 		memset( buffer, 0, 1024 );
 	
