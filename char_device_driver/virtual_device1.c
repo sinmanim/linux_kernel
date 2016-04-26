@@ -37,7 +37,7 @@ ssize_t virtual_device_read( struct file *filp, char *buf, size_t count, loff_t 
 static struct file_operations vd_fops = {
 	.read = virtual_device_read,
 	.write = virtual_device_write,
-	.open = virtual-device_open,
+	.open = virtual_device_open,
 	.release = virtual_device_release
 };
 
@@ -56,11 +56,11 @@ int __init virtual_device_init( void )
 
 void __exit virtual_device_exit( void )
 {
-	if( unregister_chrdev( 250, "virtual_device" ) < 0 )
-		printk( KERN_ALERT "driver cleanup failed\n" );
-	else
-		printk( KERN_ALERT "driver cleanup successful\n" );
+		
+	unregister_chrdev( 250, "virtual_device" );
 	
+	printk( KERN_ALERT "driver cleanup successful\n" );
+
 	kfree( buffer );
 }
 
